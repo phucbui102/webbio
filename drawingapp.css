@@ -1,0 +1,14 @@
+.container {
+  border: 1px solid red;
+  width: 800px;
+  height: 800px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container canvas {
+  width: 800px;
+  height: 800px;
+}

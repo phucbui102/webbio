@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
+        width: 100%;
+      }
+      .container {
+        width: 300px;
+        border: 1px solid #9ba4b5;
+        padding: 10px;
+        background-color: #b0daff;
+      }
+      /* .haeder {
+        text-align: center;
+      } */
+      /* .content.active p {
+        max-height: 100px;
+      } */
+
+      .accordior .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+      .accordior.active .content {
+        max-height: 100px;
+      }
+      .haeder {
+        display: flex;
+        justify-content: space-between;
+      }
+      .accordior.active .haeder i {
+        transform: rotate(180deg);
+        transition: 0, 5s;
+      }
+      /* tab slider */
+      .tabslider {
+        margin-top: 30px;
+        border-top: 1px solid red;
+        padding: 10px;
+      }
+      .tab ul {
+        display: flex;
+      }
+      .tab ul li {
+        padding: 10px;
+        margin: 1px;
+        background-color: #1b9c85;
+      }
+      .tab ul li.at {
+        background-color: #bad7e9;
+      }
+      .tab_content {
+        display: none;
+      }
+      .tab_content.at {
+        display: block;
+      }
+      /* dropdown menu */
+      .dropdown_menu {
+        border-top: 1px solid rgb(45, 44, 44);
+        padding-top: 10px;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+      }
+      .nav .avt {
+        width: 50px;
+        height: 50px;
+        /* border: 1px solid red; */
+        background-image: url("image/avtnha.jpg");
+        background-size: cover;
+        border-radius: 50%;
+      }
+      .nav ul {
+        display: flex;
+      }
+      .nav ul li {
+        padding: 10px;
+      }
+      .dropdown {
+        position: absolute;
+        top: calc(100% + 20px);
+        right: -10px;
+        width: 200px;
+        max-height: 0px;
+
+        /* visibility: hidden; */
+        background-color: #1b9c85;
+        transition: 0.1s;
+        overflow: hidden;
+      }
+      .dropdown.show {
+        max-height: 300px;
+      }
+      .dropdown::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: -5px;
+        right: 28px;
+        transform: rotate(45deg);
+        background-color: #1b9c85;
+        display: none;
+      }
+
+      .clock {
+        margin-top: 200px;
+        height: 200px;
+        width: 200px;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+      .hour {
+        height: 200px;
+        width: 5px;
+        background-color: crimson;
+        position: absolute;
+        left: 198px;
+      }
+      .test {
+        height: 500px;
+        width: 500px;
+        background-color: #1b9c85;
+        position: relative;
+        border: 5px solid;
+        border-radius: 50%;
+      }
+      .kim {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: black;
+        border-radius: 50%;
+        top: 240px;
+        left: 240px;
+      }
+      .han {
+        height: 400px;
+        width: 400px;
+
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        border-radius: 50%;
+      }
+      .hour_han {
+        transform: rotate(50deg);
+      }
+      .mm_han {
+        transform: rotate(100deg);
+      }
+      .hahaha {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="accordior">
+        <div class="haeder">
+          <p>HTML</p>
+          <i class="fa-sharp fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus
+            maxime laborum eligendi dolore nulla, nisi delectus ab sequi magni
+            doloribus beatae et itaque illum minima dolorum laudantium quia
+            deserunt molestiae?
+          </p>
+        </div>
+      </div>
+
+      <div class="tabslider">
+        <div class="tab">
+          <ul>
+            <li class="at">HTML</li>
+            <li>CSS</li>
+            <li>JS</li>
+          </ul>
+        </div>
+        <div class="tab_contents">
+          <div class="tab_content at">
+            <h1>HTML</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusantium ratione nemo debitis omnis reprehenderit architecto
+              repudiandae, obcaecati iusto quaerat nisi nulla, consequatur
+              quidem, velit sed rem voluptatem. Asperiores, sed vitae?
+            </p>
+          </div>
+          <div class="tab_content">
+            <h1>CSS</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusantium ratione nemo debitis omnis reprehenderit architecto
+              repudiandae, obcaecati iusto quaerat nisi nulla, consequatur
+              quidem, velit sed rem voluptatem. Asperiores, sed vitae?
+            </p>
+          </div>
+          <div class="tab_content">
+            <h1>JS</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Accusantium ratione nemo debitis omnis reprehenderit architecto
+              repudiandae, obcaecati iusto quaerat nisi nulla, consequatur
+              quidem, velit sed rem voluptatem. Asperiores, sed vitae? haha
+              hahahhahahhah
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown_menu">
+        <div class="nav">
+          <div class="menu">
+            <ul class="list_item">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JS</li>
+            </ul>
+          </div>
+          <div class="avt"></div>
+          <div class="dropdown">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Temporibus maxime laborum eligendi dolore nulla, nisi delectus ab
+              sequi magni doloribus beatae et itaque illum minima dolorum
+              laudantium quia deserunt molestiae?
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="clock"></div>
+      <div class="test">
+        <div class="kim"></div>
+        <div class="han hour_han">
+          <div class="hahaha">
+            <div class="hour"></div>
+            <div class="mm"></div>
+          </div>
+        </div>
+        <div class="han mm_han">
+          <div class="hahaha">
+            <div class="hour"></div>
+            <div class="mm"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let haeder_ = document.querySelector(".haeder i");
+      let content_ = document.querySelector(".content");
+      let accordior = document.querySelector(".accordior");
+      let dropdown = document.querySelector(".dropdown");
+      let avr = document.querySelector(".avt");
+      avr.addEventListener("click", () => {
+        dropdown.classList.toggle("show");
+      });
+      haeder_.addEventListener("click", () => {
+        accordior.classList.toggle("active");
+      });
+      // tab slider
+      let list_tab_content = document.querySelectorAll(".tab_content");
+      let list_tab = document.querySelectorAll(".tab ul li");
+      list_tab.forEach((element, index) => {
+        element.addEventListener("click", () => {
+          list_tab.forEach((element) => {
+            element.classList.remove("at");
+          });
+          list_tab_content.forEach((element) => {
+            element.classList.remove("at");
+          });
+          element.classList.add("at");
+          list_tab_content[index].classList.add("at");
+        });
+      });
+      // autooo();
+      // function autooo() {
+      //   let clock_hour = document.querySelector(".hour");
+      //   const a = new Date();
+      //   console.log(a);
+      //   let minutes = a.getMinutes() * 6;
+      //   console.log(minutes);
+      //   clock_hour.style.transform = `rotateZ(45deg)`;
+      //   console.log("haha");
+      //   setTimeout(autooo, 1000);
+      // }
+    </script>
+  </body>
+</html>

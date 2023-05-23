@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  background-color: #3c486b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 300px;
+
+  background-color: #f0f0f0;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.list_todo li {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f45050;
+
+  border-radius: 25px;
+}
+ul.list_todo {
+  margin: 10px 0;
+}
+.content {
+  background-color: #e8f6ef;
+  border-radius: 25px;
+  text-align: center;
+  margin: 10px;
+}
+.content h2 {
+  margin-bottom: 10px;
+}
+.content .input_button {
+  padding: 10px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.content .content_button {
+  background-color: #f7db6a;
+  border-radius: 25px;
+}
+.content .content_button .button_add {
+  padding: 10px;
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  background-color: #1b9c85;
+  cursor: pointer;
+}
+ul.list_todo li.complete {
+  background-color: #9ba4b5;
+}
+ul.list_todo li.complete span {
+  text-decoration: line-through;
+}
+ul.list_todo li span {
+  pointer-events: none;
+}
+ul.list_todo li i:hover {
+  cursor: pointer;
+}

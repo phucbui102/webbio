@@ -1,0 +1,54 @@
+/* .mySlides {
+  display: none;
+} */
+body {
+  width: 100dvh;
+}
+.container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(50% 50%);
+  width: 800px;
+}
+.button_left .button_right {
+  top: 10px;
+}
+.hienthi {
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+  overflow: hidden;
+  position: relative;
+}
+.button {
+  position: absolute;
+  /* justify-content: center; */
+}
+.button_left {
+  left: 1px;
+  top: 50%;
+  transform: translate(0%, 50%);
+}
+.button_right {
+  right: 1px;
+  top: 50%;
+  transform: translate(0%, 50%);
+}
+.hienthi img {
+  width: 800px;
+  margin-bottom: 10px;
+}
+.container_img {
+  display: flex;
+  justify-content: center;
+}
+.container_img img {
+  height: 100px;
+}
+/* .mySlides {
+  height: 200px;
+} */
+.hienthi img {
+  display: none;
+}

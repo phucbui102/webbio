@@ -1,0 +1,22 @@
+.cha {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
+.con {
+  width: 150px;
+  height: 150px;
+  background-color: yellow;
+  margin-top: 50px;
+}
+.con img {
+  height: 150px;
+}
+.chua {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+.chua img {
+  width: 150px;
+}

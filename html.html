@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animation scroll</title>
+  </head>
+  <style>
+    .container {
+      width: 100%;
+      height: 100vh;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .box_con {
+      height: 100px;
+      width: 200px;
+      background-color: brown;
+      /* transform: translateX(-200%); */
+      transform: scale(0);
+      transition: 1s;
+      position: relative;
+      padding: 10px;
+      top: 30px;
+      left: 30px;
+    }
+    .box_con.show {
+      /* transform: translateX(0); */
+      transform: scale(1);
+    }
+    .cv {
+      margin-top: 150px;
+    }
+  </style>
+  <body>
+    <div class="container" style="background-color: aqua">
+      <div class="box_con"></div>
+      <canvas
+        class="cv"
+        width="200"
+        height="100"
+        style="border: 1px solid #000000"
+      ></canvas>
+    </div>
+    <div class="container" style="background-color: blue">div 2</div>
+    <script>
+      let box_con = document.querySelector(".box_con");
+      let window_hight = window.innerHeight;
+      let offsetlefft = box_con.offsetLeft;
+      let star = false;
+      let cv = document.querySelector(".cv");
+      let ctx = cv.getContext("2d");
+      cv.addEventListener("mousedown", () => {
+        star = true;
+      });
+      cv.addEventListener("mouseup", () => {
+        star = false;
+        ctx.beginPath();
+      });
+      cv.addEventListener("mousemove", (e) => {
+        if (star) {
+          ctx.lineTo(e.offsetX, e.offsetY);
+          ctx.stroke();
+        }
+      });
+      console.log(offsetlefft);
+      autoshow();
+      window.onscroll = autoshow;
+      function autoshow() {
+        const locations = box_con.getBoundingClientRect();
+        console.log(locations);
+        console.log(window_hight);
+        if (locations.bottom < 0) {
+          console.log("nho hon");
+          box_con.classList.remove("show");
+        } else {
+          box_con.classList.add("show");
+        }
+      }
+    </script>
+  </body>
+</html>

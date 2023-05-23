@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f6f9;
+}
+.container {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-image: url(image/hand-clock-wood-clocks.jpg);
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .dot {
+  height: 10px;
+  width: 10px;
+  background-color: black;
+  z-index: 1;
+  border-radius: 50%;
+}
+.hand {
+  width: 400px;
+  height: 400px;
+
+  position: absolute;
+
+  border-radius: 50%;
+}
+/* .hour {
+  transform: rotate(10deg);
+} */
+.hour::after {
+  position: absolute;
+  content: "";
+  height: 150px;
+  width: 4px;
+  background-color: black;
+  left: 50%;
+  bottom: 50%;
+  border-radius: 5px;
+  transform: translate(-50%, 0);
+}
+.minute::after {
+  position: absolute;
+  content: "";
+  height: 180px;
+  width: 3px;
+  background-color: black;
+  border-radius: 5px;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+}
+.second::after {
+  position: absolute;
+  content: "";
+  height: 220px;
+  width: 3px;
+  background-color: red;
+  border-radius: 5px;
+  left: 50%;
+  bottom: 45%;
+  transform: translate(-50%, 0);
+}
