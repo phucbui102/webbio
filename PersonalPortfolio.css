@@ -14,6 +14,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 * {
   font-family: "Nunito", sans-serif;
@@ -24,12 +25,12 @@ html {
   text-decoration: none;
 }
 header .logo img {
-  width: 50px;
+  width: 40px;
   border-radius: 50%;
 }
 body {
   margin: 0;
-  background-color: var(--brcole);
+  background-color: #f7f7f7;
 }
 header ul.nav li a {
   color: black;
@@ -44,7 +45,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1;
-  background-color: var(--brcole);
+  background-color: #212a3e;
 }
 /* vs */
 /* header input[type="checkbox"] {
@@ -68,13 +69,16 @@ header .nardiv {
 header ul li {
   padding: 0 30px;
 }
+header ul.nav li a {
+  color: #dce1e4;
+}
 header ul.nav li:hover a {
   color: red;
 }
 /* night theme */
 header ul.nav .fa-moon {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -91,6 +95,8 @@ header ul.nav .fa-moon {
   max-width: 90%;
   margin: 0 auto;
   background-color: var(--brcole);
+  border: 1px solid #e6e6e6;
+  margin-top: 100px;
 }
 
 .content h1 {
@@ -99,19 +105,22 @@ header ul.nav .fa-moon {
 #home {
   display: grid;
   grid-template-columns: 40% 60%;
-  padding-top: 100px;
+  /* padding-top: 100px;
+  margin-top: 100px; */
 }
 .contact {
-  margin-top: 10px;
+  margin-top: 200px;
 }
+
 .contact ul {
   display: flex;
+  margin-top: 10px;
 }
 .contact ul li {
   width: 50px;
   height: 50px;
   box-shadow: var(--boxshadow);
-  margin: 10px;
+  margin-right: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -126,31 +135,56 @@ header ul.nav .fa-moon {
   cursor: pointer;
 }
 .container .avatar img {
-  width: 35%;
+  width: 29%;
   padding: 10px;
 }
 .dvl h2 {
-  font-size: 45px;
+  font-size: 41px;
 }
 .dvl {
-  margin-top: 40px;
+  /* margin-top: 40px; */
   position: relative;
+  overflow: hidden;
+  display: flex;
 }
-.dvl::after {
+.dvl .im_a,
+.dvl .developer {
+  font-size: 60px;
+  font-weight: 600;
+}
+.dvl .developer {
+  margin-left: 15px;
+  position: relative;
+  color: #004d7a;
+
+  background: -webkit-linear-gradient(#30cfd0, #330867);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dvl .developer::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
+  animation: text 2s infinite steps(10);
+  left: 0;
   background-color: var(--brcole);
-  top: 0;
-  animation: text 2s alternate;
+  border-left: #004d7a 2px solid;
 }
+/* .dvl::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  top: 0;
+  left: 0;
+  animation: text 4s infinite steps(20);
+  
+} */
 @keyframes text {
-  from {
-    left: 0;
-  }
-  to {
-    left: 500px;
+  100% {
+    left: calc(100% + 40px);
   }
 }
 .title {
@@ -381,16 +415,19 @@ footer {
 .dark #skill {
   color: #ffff;
 }
+.container#comment {
+  margin: 20px auto;
+}
 /* comment */
 .comment_container {
-  width: 80%;
+  width: 100%;
+  margin: 20px 0;
   /* min-height: 500px; */
   background-color: #004d7a;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  margin-bottom: 30px;
 }
 .comment {
   height: auto;
@@ -407,25 +444,37 @@ footer {
   border: none;
   padding: 5px;
 }
-
+.content_input_comment {
+  margin-bottom: 0px;
+}
 .conttent_comments {
   /* height: 100%; */
   /* height: 200px; */
-  margin-top: 20px;
-  width: 100%;
+  margin-top: 10px;
+  /* width: 100%; */
   border-radius: 10px;
   background-color: #c1c8d3;
-  position: relative;
+  padding: 10px;
+  /* position: relative; */
 }
-.conttent_comments > h3 {
+ul.list_comment {
+  /* margin: 10px; */
+}
+.conttent_comments > h2 {
+  margin: 10px;
+}
+li.li_comment {
+  background-color: var(--brcole);
+  padding: 20px;
+  border-radius: 10px;
   margin: 10px;
 }
 .comment_header {
   display: flex;
   align-items: center;
-  padding: 10px;
-  padding-bottom: 0px;
+  margin-bottom: 10px;
 }
+
 .comment_header .name {
   font-weight: bold;
 }
@@ -435,6 +484,7 @@ footer {
   border-radius: 50%;
   margin-right: 10px;
 }
+/*
 .conttent_comments .comment {
   margin: 10px;
   position: absolute;
@@ -452,10 +502,11 @@ li.li_comment {
   background-color: #e8f6ef;
   border-radius: 10px;
   padding-bottom: 10px;
-}
+} */
 .reply_like_and_dislike {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 .reply_like_and_dislike > p:hover {
   cursor: pointer;
