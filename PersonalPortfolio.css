@@ -536,21 +536,26 @@ li.li_comment {
 .input_content {
   display: inline-block;
 }
+.name_input {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .name_input input {
-  width: 500px;
+  width: 50%;
   height: 30px;
   border-radius: 10px;
   padding: 5px;
 }
 .name_input button {
   height: 40px;
-  width: 50px;
+  width: 20%;
   border-radius: 10px;
 }
 .form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+
   display: none;
 }
 .form.show_inputcomment {
